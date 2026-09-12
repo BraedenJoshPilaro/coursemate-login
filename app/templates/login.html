@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Mapua Chat</h1>
+  <p>Sign in with your Mapua account to continue.</p>
+  {% if error %}<p class="error">{{ error }}</p>{% endif %}
+  <a class="btn" href="/auth/login">Sign in with Microsoft</a>
+{% endblock %}
