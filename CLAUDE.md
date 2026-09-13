@@ -17,6 +17,27 @@ Run from the repo root: `app/main.py` mounts `app/static` and `app/templates` vi
 
 There are no tests, linter, or build step configured.
 
+## Project Structure
+
+```
+mapua-chat-login/
+├── app/
+│   ├── __init__.py
+│   ├── main.py            # FastAPI app, middleware, and all routes
+│   ├── auth.py            # Authlib Microsoft client + domain gate helpers
+│   ├── config.py          # Loads .env into module-level constants
+│   ├── static/
+│   │   └── css/
+│   │       └── style.css
+│   └── templates/
+│       ├── base.html      # Shared layout; other templates extend it
+│       ├── login.html
+│       └── dashboard.html
+├── .env.example           # Template for required environment variables
+├── requirements.txt
+└── README.md
+```
+
 ## Architecture
 
 A small FastAPI app that signs users in with Microsoft Entra ID (OAuth2/OIDC via Authlib) and only lets in accounts from the Mapua email domain.
